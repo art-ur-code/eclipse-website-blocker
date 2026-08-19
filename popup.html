@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Blocker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main>
+    <h1>Blocked sites</h1>
+    <p>Add domains you want to block, for example <code>youtube.com</code>.</p>
+
+    <form id="add-form">
+      <input id="domain-input" type="text" placeholder="example.com" autocomplete="off" />
+      <button type="submit">Add</button>
+    </form>
+
+    <p id="error" role="alert"></p>
+    <ul id="sites-list" aria-label="Blocked domains"></ul>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

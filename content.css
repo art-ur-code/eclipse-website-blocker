@@ -1,0 +1,205 @@
+:root.iwb-banner-active {
+  background: #ffd6d6 !important;
+  scroll-padding-top: 58px !important;
+}
+
+:root.iwb-banner-active body {
+  min-height: calc(100vh - 58px) !important;
+}
+
+:root.iwb-banner-active body > *:not(#iwb-block-overlay):not(#iwb-reason-banner) {
+  transform: translateY(58px) !important;
+}
+
+#iwb-block-overlay,
+#iwb-block-overlay * {
+  box-sizing: border-box !important;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+#iwb-block-overlay {
+  align-items: center !important;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 139, 122, 0.28), transparent 30%) !important,
+    radial-gradient(circle at 80% 90%, rgba(255, 184, 107, 0.18), transparent 32%) !important,
+    rgba(17, 16, 24, 0.96) !important;
+  backdrop-filter: blur(10px) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  inset: 0 !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  position: fixed !important;
+  z-index: 2147483647 !important;
+}
+
+#iwb-block-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fff8f6 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.46), 0 0 0 1px rgba(255, 139, 122, 0.12) inset !important;
+  color: #211c20 !important;
+  max-width: 660px !important;
+  padding: 34px !important;
+  width: min(660px, 100%) !important;
+}
+
+#iwb-block-card::before {
+  background: linear-gradient(135deg, #ff6b6b, #ffb86b) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 14px 30px rgba(255, 107, 107, 0.28) !important;
+  content: "" !important;
+  display: block !important;
+  height: 42px !important;
+  margin-bottom: 18px !important;
+  width: 42px !important;
+}
+
+#iwb-block-card p {
+  color: #211c20 !important;
+  font-size: 24px !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.22 !important;
+  margin: 0 0 24px !important;
+}
+
+#iwb-reason {
+  background: #ffffff !important;
+  border: 2px solid #f0dfe1 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 28px rgba(48, 40, 64, 0.06) !important;
+  color: #211c20 !important;
+  display: block !important;
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  margin-bottom: 18px !important;
+  min-height: 120px !important;
+  outline: none !important;
+  padding: 14px !important;
+  resize: vertical !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+  width: 100% !important;
+}
+
+#iwb-reason:focus,
+#iwb-minutes:focus {
+  border-color: #ff8a80 !important;
+  box-shadow: 0 0 0 5px rgba(255, 138, 128, 0.16), 0 10px 28px rgba(48, 40, 64, 0.06) !important;
+}
+
+#iwb-time-row {
+  color: #534b52 !important;
+  display: block !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  margin-bottom: 18px !important;
+}
+
+#iwb-minutes {
+  background: #ffffff !important;
+  border: 2px solid #f0dfe1 !important;
+  border-radius: 14px !important;
+  color: #211c20 !important;
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  margin-top: 9px !important;
+  max-width: 130px !important;
+  outline: none !important;
+  padding: 11px 12px !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+  width: 100% !important;
+}
+
+#iwb-checkbox-row {
+  align-items: flex-start !important;
+  background: #fff1ee !important;
+  border: 1px solid #ffd9d2 !important;
+  border-radius: 16px !important;
+  color: #332b31 !important;
+  display: flex !important;
+  font-size: 15px !important;
+  gap: 12px !important;
+  line-height: 1.4 !important;
+  margin-bottom: 22px !important;
+  padding: 14px !important;
+}
+
+#iwb-checkbox-row input {
+  accent-color: #ff6b6b !important;
+  flex: 0 0 auto !important;
+  height: 18px !important;
+  margin-top: 1px !important;
+  width: 18px !important;
+}
+
+#iwb-continue {
+  background: linear-gradient(135deg, #ff6b6b, #ff8f70) !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 14px 28px rgba(255, 107, 107, 0.25) !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.01em !important;
+  padding: 15px 20px !important;
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s !important;
+  width: 100% !important;
+}
+
+#iwb-continue:not(:disabled):hover {
+  box-shadow: 0 18px 34px rgba(255, 107, 107, 0.32) !important;
+  transform: translateY(-1px) !important;
+}
+
+#iwb-continue:disabled {
+  background: #d9d2d5 !important;
+  box-shadow: none !important;
+  color: #8d858b !important;
+  cursor: not-allowed !important;
+}
+
+#iwb-reason-banner {
+  align-items: center !important;
+  background: #ffd6d6 !important;
+  color: #5f1f1f !important;
+  display: flex !important;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  gap: 20px !important;
+  height: 50px !important;
+  justify-content: space-between !important;
+  left: 0 !important;
+  line-height: 1.35 !important;
+  padding: 2px 18px !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: left !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  margin: 0 !important;
+}
+
+#iwb-banner-reason {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-align: left !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+#iwb-banner-timer {
+  background: rgba(255, 255, 255, 0.45) !important;
+  border: 1px solid rgba(95, 31, 31, 0.12) !important;
+  border-radius: 999px !important;
+  flex: 0 0 auto !important;
+  padding: 6px 12px !important;
+  margin-right: 25px !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}

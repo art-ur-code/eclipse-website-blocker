@@ -1,0 +1,29 @@
+# Eclipse Website Blocker
+
+A browser extension that blocks chosen websites until you write down your reason for visiting and confirm your intent. The goal is to add friction to mindless browsing rather than hard-blocking sites outright.
+
+## Features
+
+- Add and remove domains you want to block (e.g. `youtube.com`)
+- Blocked sites show an overlay requiring you to state your reason before proceeding
+- Works across all URLs via a content script injected at page load
+- Simple popup UI for managing your blocked domains list
+
+## Installation (Chrome / Chromium-based browsers)
+
+1. Clone this repository.
+2. Open `chrome://extensions` in your browser.
+3. Enable **Developer mode** (top right).
+4. Click **Load unpacked** and select the project folder.
+5. Click the extension icon to open the popup and start adding domains to block.
+
+## Project structure
+
+- `manifest.json` — Manifest V3 extension configuration
+- `popup.html` / `popup.js` / `popup.css` — extension popup UI for managing blocked domains
+- `content.js` / `content.css` — content script that blocks matching sites and renders the reason prompt
+- `icon.png` — extension icon
+
+## License
+
+Personal project, all rights reserved.
