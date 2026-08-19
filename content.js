@@ -2,7 +2,6 @@ const IWB_STORAGE_KEY = "blockedSites";
 const IWB_ALLOWANCES_KEY = "activeAllowances";
 const IWB_OVERLAY_ID = "iwb-block-overlay";
 const IWB_BANNER_ID = "iwb-reason-banner";
-const IWB_BANNER_ACTIVE_CLASS = "iwb-banner-active";
 
 let countdownIntervalId = null;
 let allowedUntil = 0;
@@ -57,7 +56,6 @@ function removeOverlay() {
 
 function removeBanner() {
   document.getElementById(IWB_BANNER_ID)?.remove();
-  document.documentElement.classList.remove(IWB_BANNER_ACTIVE_CLASS);
 }
 
 function stopCountdown() {
@@ -113,16 +111,61 @@ function showBanner(reason, expiryTime, domain) {
 
   const banner = document.createElement("div");
   banner.id = IWB_BANNER_ID;
+  banner.style.cssText = [
+    "all: initial",
+    "box-sizing: border-box",
+    "position: fixed",
+    "left: 0",
+    "right: 0",
+    "bottom: 0",
+    "z-index: 2147483647",
+    "display: flex",
+    "align-items: center",
+    "justify-content: space-between",
+    "gap: 16px",
+    "height: 34px",
+    "padding: 0 14px",
+    "background: #202024",
+    "border-top: 1px solid rgba(255, 255, 255, 0.08)",
+    "color: #d8d5d6",
+    "font: 600 12.5px/1.3 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  ].join(";");
 
   const reasonText = document.createElement("span");
   reasonText.id = "iwb-banner-reason";
+  reasonText.style.cssText = [
+    "all: initial",
+    "box-sizing: border-box",
+    "display: block",
+    "flex: 1 1 auto",
+    "min-width: 0",
+    "overflow: hidden",
+    "text-align: left",
+    "text-overflow: ellipsis",
+    "white-space: nowrap",
+    "color: inherit",
+    "font: inherit",
+  ].join(";");
 
   const timerText = document.createElement("span");
   timerText.id = "iwb-banner-timer";
+  timerText.style.cssText = [
+    "all: initial",
+    "box-sizing: border-box",
+    "display: block",
+    "flex: 0 0 auto",
+    "background: rgba(255, 255, 255, 0.08)",
+    "border: 1px solid rgba(255, 255, 255, 0.12)",
+    "border-radius: 999px",
+    "padding: 3px 10px",
+    "white-space: nowrap",
+    "color: inherit",
+    "font: inherit",
+    "font-variant-numeric: tabular-nums",
+  ].join(";");
 
   banner.append(reasonText, timerText);
   document.documentElement.appendChild(banner);
-  document.documentElement.classList.add(IWB_BANNER_ACTIVE_CLASS);
   updateBannerCountdown();
 
   countdownIntervalId = setInterval(updateBannerCountdown, 1000);
