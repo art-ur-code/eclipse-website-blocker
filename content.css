@@ -82,10 +82,13 @@
   width: 100% !important;
 }
 
-#iwb-reason:focus,
-#iwb-minutes:focus {
+#iwb-reason:focus {
   border-color: #ff8a80 !important;
   box-shadow: 0 0 0 5px rgba(255, 138, 128, 0.16), 0 10px 28px rgba(48, 40, 64, 0.06) !important;
+}
+
+#iwb-minutes:focus-visible {
+  box-shadow: 0 0 0 5px rgba(255, 138, 128, 0.24) !important;
 }
 
 #iwb-time-row {
@@ -97,20 +100,62 @@
   margin-bottom: 18px !important;
 }
 
+#iwb-time-row-top {
+  align-items: baseline !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-bottom: 11px !important;
+}
+
+#iwb-minutes-value {
+  color: #ff6b6b !important;
+  font-size: 15px !important;
+  font-weight: 850 !important;
+}
+
 #iwb-minutes {
-  background: #ffffff !important;
-  border: 2px solid #f0dfe1 !important;
-  border-radius: 14px !important;
-  color: #211c20 !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  accent-color: #ff6b6b !important;
+  background: #f0dfe1 !important;
+  border: none !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
   display: block !important;
-  font-size: 16px !important;
-  font-weight: 800 !important;
-  margin-top: 9px !important;
-  max-width: 130px !important;
+  height: 8px !important;
+  margin: 0 !important;
   outline: none !important;
-  padding: 11px 12px !important;
-  transition: border-color 0.2s, box-shadow 0.2s !important;
+  padding: 0 !important;
   width: 100% !important;
+}
+
+#iwb-minutes::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  background: #ff6b6b !important;
+  border: 3px solid #ffffff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 8px rgba(48, 40, 64, 0.25) !important;
+  cursor: pointer !important;
+  height: 20px !important;
+  width: 20px !important;
+}
+
+#iwb-minutes::-moz-range-thumb {
+  background: #ff6b6b !important;
+  border: 3px solid #ffffff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 8px rgba(48, 40, 64, 0.25) !important;
+  cursor: pointer !important;
+  height: 20px !important;
+  width: 20px !important;
+}
+
+#iwb-minutes::-moz-range-track {
+  background: #f0dfe1 !important;
+  border: none !important;
+  border-radius: 999px !important;
+  height: 8px !important;
 }
 
 #iwb-checkbox-row {

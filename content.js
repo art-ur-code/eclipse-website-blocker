@@ -151,17 +151,33 @@ function showBlockOverlay(blockedDomain = currentBlockedDomain) {
 
   const timeLabel = document.createElement("label");
   timeLabel.id = "iwb-time-row";
-  timeLabel.textContent = "How many minutes will you use this website?";
+
+  const timeLabelText = document.createElement("span");
+  timeLabelText.textContent = "How many minutes will you use this website?";
+
+  const minutesValue = document.createElement("span");
+  minutesValue.id = "iwb-minutes-value";
+
+  const timeLabelTop = document.createElement("div");
+  timeLabelTop.id = "iwb-time-row-top";
+  timeLabelTop.append(timeLabelText, minutesValue);
 
   const minutesInput = document.createElement("input");
   minutesInput.id = "iwb-minutes";
-  minutesInput.type = "number";
-  minutesInput.min = "1";
+  minutesInput.type = "range";
+  minutesInput.min = "5";
   minutesInput.max = "60";
-  minutesInput.value = "15";
+  minutesInput.step = "5";
+  minutesInput.value = "10";
   minutesInput.setAttribute("aria-label", "Minutes to use this website");
 
-  timeLabel.appendChild(minutesInput);
+  const updateMinutesValue = () => {
+    minutesValue.textContent = `${minutesInput.value} min`;
+  };
+  updateMinutesValue();
+  minutesInput.addEventListener("input", updateMinutesValue);
+
+  timeLabel.append(timeLabelTop, minutesInput);
 
   const checkboxLabel = document.createElement("label");
   checkboxLabel.id = "iwb-checkbox-row";
