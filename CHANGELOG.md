@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.2.1]
+
+### Changed
+
+- Restyled the popup (blocked sites list) to match the dark eclipse theme used by the block overlay and banner.
+- The popup title now shows the extension icon as its logo instead of a generic gradient placeholder.
+
 ## [1.2.0]
 
 ### Added

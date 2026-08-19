@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Intentional Website Blocker",
-  "version": "1.2.0",
+  "name": "Eclipse - Website Blocker",
+  "version": "1.2.1",
   "description": "Block chosen websites until you write a reason and confirm your intent.",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],

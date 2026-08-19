@@ -3,7 +3,7 @@
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -11,9 +11,10 @@ body {
   width: 360px;
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(255, 160, 122, 0.35), transparent 34%),
-    linear-gradient(135deg, #fff7f3 0%, #f5f7ff 100%);
-  color: #231f20;
+    radial-gradient(circle at 15% 0%, rgba(255, 176, 82, 0.14), transparent 40%),
+    radial-gradient(circle at 85% 100%, rgba(255, 138, 61, 0.1), transparent 42%),
+    #060504;
+  color: #f3ece3;
 }
 
 main {
@@ -28,11 +29,9 @@ h1 {
   margin: 0 0 8px;
 }
 
-h1::before {
-  background: linear-gradient(135deg, #ff6b6b, #ffb86b);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.28);
-  content: "";
+#logo {
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 176, 82, 0.45);
   display: inline-block;
   height: 28px;
   margin-right: 10px;
@@ -40,25 +39,25 @@ h1::before {
 }
 
 p {
-  color: #625b66;
+  color: #c9beb2;
   font-size: 13px;
   margin: 0 0 16px;
   line-height: 1.45;
 }
 
 code {
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(255, 107, 107, 0.18);
+  background: #0f0d0b;
+  border: 1px solid rgba(255, 176, 82, 0.22);
   border-radius: 7px;
-  color: #9f322f;
+  color: #ffb052;
   padding: 2px 6px;
 }
 
 form {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(180deg, #14110d 0%, #0b0908 100%);
+  border: 1px solid rgba(255, 176, 82, 0.18);
   border-radius: 16px;
-  box-shadow: 0 16px 40px rgba(48, 40, 64, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   display: flex;
   gap: 8px;
   margin-bottom: 10px;
@@ -66,10 +65,10 @@ form {
 }
 
 input {
-  background: #ffffff;
-  border: 1px solid #eadfe5;
+  background: #0f0d0b;
+  border: 1px solid rgba(255, 176, 82, 0.2);
   border-radius: 12px;
-  color: #231f20;
+  color: #f3ece3;
   flex: 1;
   font-size: 14px;
   outline: none;
@@ -77,17 +76,21 @@ input {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+input::placeholder {
+  color: #8a7f74;
+}
+
 input:focus {
-  border-color: #ff8a80;
-  box-shadow: 0 0 0 4px rgba(255, 138, 128, 0.16);
+  border-color: #ffb052;
+  box-shadow: 0 0 0 4px rgba(255, 176, 82, 0.16);
 }
 
 button {
   border: 0;
   border-radius: 12px;
-  background: linear-gradient(135deg, #ff6b6b, #ff8f70);
-  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.22);
-  color: white;
+  background: linear-gradient(135deg, #ff8a3d, #ffc26b);
+  box-shadow: 0 10px 20px rgba(255, 176, 82, 0.22);
+  color: #14110d;
   cursor: pointer;
   font-weight: 800;
   padding: 10px 14px;
@@ -95,19 +98,24 @@ button {
 }
 
 button:hover {
-  box-shadow: 0 12px 24px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 12px 24px rgba(255, 176, 82, 0.3);
   transform: translateY(-1px);
 }
 
 button.remove {
-  background: #fff0ee;
+  background: rgba(255, 107, 107, 0.12);
   box-shadow: none;
-  color: #c0362c;
+  color: #ff8a80;
   padding: 7px 10px;
 }
 
+button.remove:hover {
+  box-shadow: none;
+  transform: none;
+}
+
 #error {
-  color: #b42318;
+  color: #ff8a80;
   font-size: 12px;
   min-height: 18px;
 }
@@ -120,10 +128,10 @@ ul {
 
 li {
   align-items: center;
-  background: rgba(255, 255, 255, 0.84);
-  border: 1px solid rgba(234, 223, 229, 0.9);
+  background: linear-gradient(180deg, #14110d 0%, #0b0908 100%);
+  border: 1px solid rgba(255, 176, 82, 0.14);
   border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(48, 40, 64, 0.07);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
   display: flex;
   font-weight: 700;
   justify-content: space-between;
@@ -132,7 +140,7 @@ li {
 }
 
 .empty {
-  color: #817982;
+  color: #8a7f74;
   font-style: italic;
   font-weight: 500;
   justify-content: center;
