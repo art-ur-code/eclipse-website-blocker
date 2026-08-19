@@ -5,7 +5,8 @@ A browser extension that blocks chosen websites until you write down your reason
 ## Features
 
 - Add and remove domains you want to block (e.g. `youtube.com`)
-- Blocked sites show an overlay requiring you to state your reason before proceeding
+- Blocked sites show an overlay requiring you to state your reason and how long you'll stay before proceeding
+- Once allowed, a fixed bottom banner shows your reason and a countdown; hovering the countdown reveals a **STOP** button to re-block the site immediately, discarding the remaining time
 - Works across all URLs via a content script injected at page load
 - Simple popup UI for managing your blocked domains list
 
@@ -23,6 +24,10 @@ A browser extension that blocks chosen websites until you write down your reason
 - `popup.html` / `popup.js` / `popup.css` — extension popup UI for managing blocked domains
 - `content.js` / `content.css` — content script that blocks matching sites and renders the reason prompt
 - `icon.png` — extension icon
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

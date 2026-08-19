@@ -98,7 +98,9 @@ function updateBannerCountdown() {
   const reasonText = banner.querySelector("#iwb-banner-reason");
   const timerText = banner.querySelector("#iwb-banner-timer");
   reasonText.textContent = `I'm only using this because: ${currentReason}`;
-  timerText.textContent = `Time left: ${formatRemainingTime(remaining)}`;
+  if (!timerText.dataset.hovering) {
+    timerText.textContent = `Time left: ${formatRemainingTime(remaining)}`;
+  }
 }
 
 function showBanner(reason, expiryTime, domain) {
@@ -125,9 +127,9 @@ function showBanner(reason, expiryTime, domain) {
     "gap: 16px",
     "height: 34px",
     "padding: 0 14px",
-    "background: #202024",
-    "border-top: 1px solid rgba(255, 255, 255, 0.08)",
-    "color: #d8d5d6",
+    "background: #0b0908",
+    "border-top: 1px solid rgba(255, 176, 82, 0.22)",
+    "color: #f3ece3",
     "font: 600 12.5px/1.3 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   ].join(";");
 
@@ -147,22 +149,48 @@ function showBanner(reason, expiryTime, domain) {
     "font: inherit",
   ].join(";");
 
-  const timerText = document.createElement("span");
+  const timerText = document.createElement("button");
   timerText.id = "iwb-banner-timer";
+  timerText.type = "button";
+  timerText.setAttribute("aria-label", "Stop and block this site now");
   timerText.style.cssText = [
     "all: initial",
     "box-sizing: border-box",
     "display: block",
     "flex: 0 0 auto",
-    "background: rgba(255, 255, 255, 0.08)",
-    "border: 1px solid rgba(255, 255, 255, 0.12)",
+    "min-width: 116px",
+    "text-align: center",
+    "background: rgba(255, 176, 82, 0.12)",
+    "border: 1px solid rgba(255, 176, 82, 0.28)",
     "border-radius: 999px",
     "padding: 3px 10px",
     "white-space: nowrap",
-    "color: inherit",
+    "color: #ffb052",
     "font: inherit",
     "font-variant-numeric: tabular-nums",
+    "cursor: pointer",
+    "transition: background 0.15s, border-color 0.15s, color 0.15s",
   ].join(";");
+
+  timerText.addEventListener("mouseenter", () => {
+    timerText.dataset.hovering = "true";
+    timerText.textContent = "STOP";
+    timerText.style.background = "rgba(255, 107, 107, 0.16)";
+    timerText.style.borderColor = "rgba(255, 107, 107, 0.4)";
+    timerText.style.color = "#ff6b6b";
+  });
+
+  timerText.addEventListener("mouseleave", () => {
+    delete timerText.dataset.hovering;
+    timerText.style.background = "rgba(255, 176, 82, 0.12)";
+    timerText.style.borderColor = "rgba(255, 176, 82, 0.28)";
+    timerText.style.color = "#ffb052";
+    updateBannerCountdown();
+  });
+
+  timerText.addEventListener("click", () => {
+    lockWebsiteAgain();
+  });
 
   banner.append(reasonText, timerText);
   document.documentElement.appendChild(banner);
@@ -183,6 +211,11 @@ function showBlockOverlay(blockedDomain = currentBlockedDomain) {
 
   const card = document.createElement("div");
   card.id = "iwb-block-card";
+
+  const icon = document.createElement("img");
+  icon.id = "iwb-block-icon";
+  icon.src = chrome.runtime.getURL("icon.png");
+  icon.alt = "";
 
   const message = document.createElement("p");
   message.textContent = "You've decided to block this website! Do you really need to use it? If so, leave a message bellow with the reason and proceed";
@@ -216,6 +249,8 @@ function showBlockOverlay(blockedDomain = currentBlockedDomain) {
 
   const updateMinutesValue = () => {
     minutesValue.textContent = `${minutesInput.value} min`;
+    const percent = ((minutesInput.value - minutesInput.min) / (minutesInput.max - minutesInput.min)) * 100;
+    minutesInput.style.setProperty("--iwb-progress", `${percent}%`);
   };
   updateMinutesValue();
   minutesInput.addEventListener("input", updateMinutesValue);
@@ -259,7 +294,7 @@ function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   });
 
   checkboxLabel.append(checkbox, checkboxText);
-  card.append(message, reason, timeLabel, checkboxLabel, button);
+  card.append(icon, message, reason, timeLabel, checkboxLabel, button);
   overlay.appendChild(card);
   document.documentElement.appendChild(overlay);
   reason.focus();
