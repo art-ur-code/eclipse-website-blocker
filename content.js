@@ -1,5 +1,7 @@
 const IWB_STORAGE_KEY = "blockedSites";
 const IWB_ALLOWANCES_KEY = "activeAllowances";
+const IWB_SETTINGS_KEY = "minReasonChars";
+const IWB_DEFAULT_MIN_REASON_CHARS = 100;
 const IWB_OVERLAY_ID = "iwb-block-overlay";
 const IWB_BANNER_ID = "iwb-reason-banner";
 
@@ -26,6 +28,11 @@ async function getBlockedSites() {
 async function getActiveAllowances() {
   const result = await chrome.storage.local.get({ [IWB_ALLOWANCES_KEY]: {} });
   return result[IWB_ALLOWANCES_KEY];
+}
+
+async function getMinReasonChars() {
+  const result = await chrome.storage.sync.get({ [IWB_SETTINGS_KEY]: IWB_DEFAULT_MIN_REASON_CHARS });
+  return result[IWB_SETTINGS_KEY];
 }
 
 async function saveAllowance(domain, reason, minutes) {
@@ -199,12 +206,15 @@ function showBanner(reason, expiryTime, domain) {
   countdownIntervalId = setInterval(updateBannerCountdown, 1000);
 }
 
-function showBlockOverlay(blockedDomain = currentBlockedDomain) {
+async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   if (document.getElementById(IWB_OVERLAY_ID)) return;
 
   stopCountdown();
   removeBanner();
   currentBlockedDomain = blockedDomain;
+
+  const minReasonChars = await getMinReasonChars();
+  if (document.getElementById(IWB_OVERLAY_ID) || currentBlockedDomain !== blockedDomain) return;
 
   const overlay = document.createElement("div");
   overlay.id = IWB_OVERLAY_ID;
@@ -222,8 +232,11 @@ function showBlockOverlay(blockedDomain = currentBlockedDomain) {
 
   const reason = document.createElement("textarea");
   reason.id = "iwb-reason";
-  reason.placeholder = "Write your reason here...";
+  reason.placeholder = `Write your reason here (at least ${minReasonChars} characters)...`;
   reason.setAttribute("aria-label", "Reason to continue");
+
+  const reasonCounter = document.createElement("p");
+  reasonCounter.id = "iwb-reason-counter";
 
   const timeLabel = document.createElement("label");
   timeLabel.id = "iwb-time-row";
@@ -273,20 +286,29 @@ function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   button.disabled = true;
 
   const getSelectedMinutes = () => Number(minutesInput.value);
+  const getReasonLength = () => reason.value.trim().length;
+
+  const updateReasonCounter = () => {
+    const length = getReasonLength();
+    reasonCounter.textContent = `${length} / ${minReasonChars} characters`;
+    reasonCounter.classList.toggle("iwb-reason-counter-met", length >= minReasonChars);
+  };
 
   const updateButton = () => {
     const minutes = getSelectedMinutes();
     const hasValidTime = Number.isInteger(minutes) && minutes >= 1 && minutes <= 60;
-    button.disabled = reason.value.trim().length === 0 || !checkbox.checked || !hasValidTime;
+    updateReasonCounter();
+    button.disabled = getReasonLength() < minReasonChars || !checkbox.checked || !hasValidTime;
   };
 
+  updateButton();
   reason.addEventListener("input", updateButton);
   minutesInput.addEventListener("input", updateButton);
   checkbox.addEventListener("change", updateButton);
   button.addEventListener("click", async () => {
     const finalReason = reason.value.trim();
     const minutes = getSelectedMinutes();
-    if (!finalReason || !checkbox.checked || !Number.isInteger(minutes) || minutes < 1 || minutes > 60) return;
+    if (finalReason.length < minReasonChars || !checkbox.checked || !Number.isInteger(minutes) || minutes < 1 || minutes > 60) return;
 
     const allowance = await saveAllowance(currentBlockedDomain, finalReason, minutes);
     removeOverlay();
@@ -294,7 +316,7 @@ function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   });
 
   checkboxLabel.append(checkbox, checkboxText);
-  card.append(icon, message, reason, timeLabel, checkboxLabel, button);
+  card.append(icon, message, reason, reasonCounter, timeLabel, checkboxLabel, button);
   overlay.appendChild(card);
   document.documentElement.appendChild(overlay);
   reason.focus();

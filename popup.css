@@ -145,3 +145,31 @@ li {
   font-weight: 500;
   justify-content: center;
 }
+
+#settings {
+  background: linear-gradient(180deg, #14110d 0%, #0b0908 100%);
+  border: 1px solid rgba(255, 176, 82, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  margin-top: 18px;
+  padding: 14px;
+}
+
+#settings h2 {
+  color: #f3ece3;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+#settings label {
+  color: #c9beb2;
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#settings input {
+  width: 100px;
+}

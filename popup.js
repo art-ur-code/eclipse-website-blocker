@@ -1,9 +1,12 @@
 const STORAGE_KEY = "blockedSites";
+const SETTINGS_KEY = "minReasonChars";
+const DEFAULT_MIN_REASON_CHARS = 100;
 
 const form = document.getElementById("add-form");
 const input = document.getElementById("domain-input");
 const list = document.getElementById("sites-list");
 const error = document.getElementById("error");
+const minCharsInput = document.getElementById("min-chars-input");
 
 function normalizeDomain(value) {
   const trimmed = value.trim().toLowerCase();
@@ -83,3 +86,22 @@ form.addEventListener("submit", async (event) => {
 });
 
 getBlockedSites().then(render);
+
+async function getMinReasonChars() {
+  const result = await chrome.storage.sync.get({ [SETTINGS_KEY]: DEFAULT_MIN_REASON_CHARS });
+  return result[SETTINGS_KEY];
+}
+
+async function setMinReasonChars(minChars) {
+  await chrome.storage.sync.set({ [SETTINGS_KEY]: minChars });
+}
+
+minCharsInput.addEventListener("change", async () => {
+  const minChars = Math.max(0, Math.floor(Number(minCharsInput.value)) || 0);
+  minCharsInput.value = minChars;
+  await setMinReasonChars(minChars);
+});
+
+getMinReasonChars().then((minChars) => {
+  minCharsInput.value = minChars;
+});
