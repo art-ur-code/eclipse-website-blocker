@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.3.0]
+
+### Added
+
+- New popup setting to require a configurable minimum number of characters (default 100) in the unlock reason before continuing is allowed.
+- The block overlay now shows a live character counter below the reason field, turning green once the minimum required length is reached (white while below it).
+
 ## [1.2.1]
 
 ### Changed

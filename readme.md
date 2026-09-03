@@ -6,6 +6,7 @@ A browser extension that blocks chosen websites until you write down your reason
 
 - Add and remove domains you want to block (e.g. `youtube.com`)
 - Blocked sites show an overlay requiring you to state your reason and how long you'll stay before proceeding
+- Configurable minimum reason length (set in the popup settings, default 100 characters); a live counter on the overlay turns green once you've reached it
 - Once allowed, a fixed bottom banner shows your reason and a countdown; hovering the countdown reveals a **STOP** button to re-block the site immediately, discarding the remaining time
 - Works across all URLs via a content script injected at page load
 - Simple popup UI for managing your blocked domains list
