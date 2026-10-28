@@ -3,29 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Website Blocker</title>
+  <title>Eclipse</title>
   <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
   <main>
-    <h1><img src="icon.png" alt="" id="logo" />Blocked sites</h1>
-    <p>Add domains you want to block, for example <code>youtube.com</code>.</p>
+    <section id="home">
+      <header class="top">
+        <h1><img src="icon.png" alt="" id="logo" />Eclipse</h1>
+        <button id="open-settings" class="pill" type="button">⚙ <span data-i18n="settingsButton"></span></button>
+      </header>
 
-    <form id="add-form">
-      <input id="domain-input" type="text" placeholder="example.com" autocomplete="off" />
-      <button type="submit">Add</button>
-    </form>
+      <button id="block-current" type="button" hidden></button>
 
-    <p id="error" role="alert"></p>
-    <ul id="sites-list" aria-label="Blocked domains"></ul>
+      <form id="add-form">
+        <input id="domain-input" type="text" placeholder="example.com" autocomplete="off" data-i18n-aria="domainInputLabel" />
+        <button type="submit" data-i18n="addButton"></button>
+      </form>
 
-    <section id="settings">
-      <h2>Settings</h2>
-      <label for="min-chars-input">Minimum characters required to unlock</label>
-      <input id="min-chars-input" type="number" min="0" max="2000" step="1" />
+      <p id="error" role="alert"></p>
+
+      <button id="open-sites" class="nav-row" type="button">
+        <span data-i18n="blockedSitesTitle"></span>
+        <span class="nav-meta"><span id="sites-count"></span> ›</span>
+      </button>
+    </section>
+
+    <section id="sites" hidden>
+      <header class="top">
+        <button class="back" type="button" data-i18n-aria="back">‹</button>
+        <h1 data-i18n="blockedSitesTitle"></h1>
+      </header>
+      <ul id="sites-list" data-i18n-aria="blockedSitesTitle"></ul>
+    </section>
+
+    <section id="settings" hidden>
+      <header class="top">
+        <button class="back" type="button" data-i18n-aria="back">‹</button>
+        <h1 data-i18n="settingsTitle"></h1>
+      </header>
+
+      <div class="setting">
+        <label for="language-select" data-i18n="languageLabel"></label>
+        <select id="language-select"></select>
+      </div>
+
+      <div class="setting">
+        <label for="min-chars-input" data-i18n="minCharsLabel"></label>
+        <input id="min-chars-input" type="number" min="0" max="2000" step="1" />
+      </div>
     </section>
   </main>
 
+  <script src="i18n.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
