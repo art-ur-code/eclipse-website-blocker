@@ -19,667 +19,336 @@ const I18N_LANGUAGES = [
 const I18N_BASE_FALLBACK = { pt: "pt_PT", zh: "zh_CN" };
 
 const I18N_STRINGS = {
-
   en: {
-
     settingsButton: "Settings",
-
     back: "Back",
-
     blockCurrentSite: "Block {site}",
-
     siteAlreadyBlocked: "{site} is blocked",
-
     domainInputLabel: "Domain to block",
-
     addButton: "Add",
-
     invalidDomain: "Enter a valid domain, like example.com.",
-
     blockedSitesTitle: "Blocked sites",
-
     noBlockedSites: "No blocked sites yet.",
-
     removeButton: "Remove",
-
     settingsTitle: "Settings",
-
     languageLabel: "Language",
-
     languageAuto: "Browser default",
-
     minCharsLabel: "Minimum characters required to unlock",
-
     overlayMessage: "You've decided to block this website! Do you really need to use it? If so, leave a message below with the reason and proceed",
-
     reasonPlaceholder: "Write your reason here (at least {min} characters)...",
-
     reasonLabel: "Reason to continue",
-
     reasonCounter: "{count} / {min} characters",
-
     pasteBlocked: "Pasting is disabled — write it yourself",
-
     timeQuestion: "How many minutes will you use this website?",
-
     minutesValue: "{minutes} min",
-
     minutesLabel: "Minutes to use this website",
-
     declaration: "I declare that I really need to use this and I'm not sabotaging myself with this action.",
-
     continueButton: "Continue",
-
     bannerReason: "I'm only using this because: {reason}",
-
     bannerTimeLeft: "Time left: {time}",
-
     stopButton: "STOP",
-
     stopLabel: "Stop and block this site now",
-
   },
-
   es: {
-
     settingsButton: "Ajustes",
-
     back: "Atrás",
-
     blockCurrentSite: "Bloquear {site}",
-
     siteAlreadyBlocked: "{site} está bloqueado",
-
     domainInputLabel: "Dominio a bloquear",
-
     addButton: "Añadir",
-
     invalidDomain: "Introduce un dominio válido, como example.com.",
-
     blockedSitesTitle: "Sitios bloqueados",
-
     noBlockedSites: "Aún no hay sitios bloqueados.",
-
     removeButton: "Quitar",
-
     settingsTitle: "Ajustes",
-
     languageLabel: "Idioma",
-
     languageAuto: "Idioma del navegador",
-
     minCharsLabel: "Mínimo de caracteres para desbloquear",
-
     overlayMessage: "¡Decidiste bloquear este sitio web! ¿De verdad necesitas usarlo? Si es así, escribe abajo el motivo y continúa.",
-
     reasonPlaceholder: "Escribe aquí tu motivo (al menos {min} caracteres)...",
-
     reasonLabel: "Motivo para continuar",
-
     reasonCounter: "{count} / {min} caracteres",
-
     pasteBlocked: "No se puede pegar: escríbelo tú mismo",
-
     timeQuestion: "¿Cuántos minutos vas a usar este sitio web?",
-
     minutesValue: "{minutes} min",
-
     minutesLabel: "Minutos para usar este sitio web",
-
     declaration: "Declaro que de verdad necesito usarlo y que no me estoy autosaboteando con esta acción.",
-
     continueButton: "Continuar",
-
     bannerReason: "Solo lo estoy usando porque: {reason}",
-
     bannerTimeLeft: "Tiempo restante: {time}",
-
     stopButton: "DETENER",
-
     stopLabel: "Detener y bloquear este sitio ahora",
-
   },
-
   pt_PT: {
-
     settingsButton: "Definições",
-
     back: "Voltar",
-
     blockCurrentSite: "Bloquear {site}",
-
     siteAlreadyBlocked: "{site} está bloqueado",
-
     domainInputLabel: "Domínio a bloquear",
-
     addButton: "Adicionar",
-
     invalidDomain: "Introduz um domínio válido, como example.com.",
-
     blockedSitesTitle: "Sites bloqueados",
-
     noBlockedSites: "Ainda não há sites bloqueados.",
-
     removeButton: "Remover",
-
     settingsTitle: "Definições",
-
     languageLabel: "Idioma",
-
     languageAuto: "Idioma do navegador",
-
     minCharsLabel: "Mínimo de caracteres para desbloquear",
-
     overlayMessage: "Decidiste bloquear este site! Precisas mesmo de o usar? Se sim, escreve abaixo o motivo e continua.",
-
     reasonPlaceholder: "Escreve aqui o teu motivo (pelo menos {min} caracteres)...",
-
     reasonLabel: "Motivo para continuar",
-
     reasonCounter: "{count} / {min} caracteres",
-
     pasteBlocked: "Não é possível colar — escreve tu mesmo",
-
     timeQuestion: "Durante quantos minutos vais usar este site?",
-
     minutesValue: "{minutes} min",
-
     minutesLabel: "Minutos de utilização deste site",
-
     declaration: "Declaro que preciso mesmo de usar este site e que não estou a sabotar-me com esta ação.",
-
     continueButton: "Continuar",
-
     bannerReason: "Só estou a usar este site porque: {reason}",
-
     bannerTimeLeft: "Tempo restante: {time}",
-
     stopButton: "PARAR",
-
     stopLabel: "Parar e bloquear este site agora",
-
   },
-
   pt_BR: {
-
     settingsButton: "Configurações",
-
     back: "Voltar",
-
     blockCurrentSite: "Bloquear {site}",
-
     siteAlreadyBlocked: "{site} está bloqueado",
-
     domainInputLabel: "Domínio para bloquear",
-
     addButton: "Adicionar",
-
     invalidDomain: "Digite um domínio válido, como example.com.",
-
     blockedSitesTitle: "Sites bloqueados",
-
     noBlockedSites: "Nenhum site bloqueado ainda.",
-
     removeButton: "Remover",
-
     settingsTitle: "Configurações",
-
     languageLabel: "Idioma",
-
     languageAuto: "Idioma do navegador",
-
     minCharsLabel: "Mínimo de caracteres para desbloquear",
-
     overlayMessage: "Você decidiu bloquear este site! Você realmente precisa usá-lo? Se sim, escreva o motivo abaixo e continue.",
-
     reasonPlaceholder: "Escreva seu motivo aqui (pelo menos {min} caracteres)...",
-
     reasonLabel: "Motivo para continuar",
-
     reasonCounter: "{count} / {min} caracteres",
-
     pasteBlocked: "Não é possível colar — digite você mesmo",
-
     timeQuestion: "Por quantos minutos você vai usar este site?",
-
     minutesValue: "{minutes} min",
-
     minutesLabel: "Minutos de uso deste site",
-
     declaration: "Declaro que realmente preciso usar este site e que não estou me sabotando com esta ação.",
-
     continueButton: "Continuar",
-
     bannerReason: "Só estou usando este site porque: {reason}",
-
     bannerTimeLeft: "Tempo restante: {time}",
-
     stopButton: "PARAR",
-
     stopLabel: "Parar e bloquear este site agora",
-
   },
-
   fr: {
-
     settingsButton: "Paramètres",
-
     back: "Retour",
-
     blockCurrentSite: "Bloquer {site}",
-
     siteAlreadyBlocked: "{site} est bloqué",
-
     domainInputLabel: "Domaine à bloquer",
-
     addButton: "Ajouter",
-
     invalidDomain: "Saisissez un domaine valide, comme example.com.",
-
     blockedSitesTitle: "Sites bloqués",
-
     noBlockedSites: "Aucun site bloqué pour l'instant.",
-
     removeButton: "Retirer",
-
     settingsTitle: "Paramètres",
-
     languageLabel: "Langue",
-
     languageAuto: "Langue du navigateur",
-
     minCharsLabel: "Nombre minimum de caractères pour débloquer",
-
     overlayMessage: "Vous avez décidé de bloquer ce site ! En avez-vous vraiment besoin ? Si oui, indiquez la raison ci-dessous et continuez.",
-
     reasonPlaceholder: "Écrivez votre raison ici (au moins {min} caractères)...",
-
     reasonLabel: "Raison pour continuer",
-
     reasonCounter: "{count} / {min} caractères",
-
     pasteBlocked: "Le collage est désactivé — écrivez-le vous-même",
-
     timeQuestion: "Combien de minutes allez-vous utiliser ce site ?",
-
     minutesValue: "{minutes} min",
-
     minutesLabel: "Minutes d'utilisation de ce site",
-
     declaration: "Je déclare avoir vraiment besoin de l'utiliser et ne pas me saboter avec cette action.",
-
     continueButton: "Continuer",
-
     bannerReason: "Je l'utilise uniquement parce que : {reason}",
-
     bannerTimeLeft: "Temps restant : {time}",
-
     stopButton: "STOP",
-
     stopLabel: "Arrêter et bloquer ce site maintenant",
-
   },
-
   de: {
-
     settingsButton: "Einstellungen",
-
     back: "Zurück",
-
     blockCurrentSite: "{site} blockieren",
-
     siteAlreadyBlocked: "{site} ist blockiert",
-
     domainInputLabel: "Zu blockierende Domain",
-
     addButton: "Hinzufügen",
-
     invalidDomain: "Gib eine gültige Domain ein, z. B. example.com.",
-
     blockedSitesTitle: "Blockierte Websites",
-
     noBlockedSites: "Noch keine blockierten Websites.",
-
     removeButton: "Entfernen",
-
     settingsTitle: "Einstellungen",
-
     languageLabel: "Sprache",
-
     languageAuto: "Browsersprache",
-
     minCharsLabel: "Mindestanzahl an Zeichen zum Entsperren",
-
     overlayMessage: "Du hast beschlossen, diese Website zu blockieren! Brauchst du sie wirklich? Wenn ja, schreib unten deinen Grund und fahre fort.",
-
     reasonPlaceholder: "Schreib hier deinen Grund (mindestens {min} Zeichen)...",
-
     reasonLabel: "Grund zum Fortfahren",
-
     reasonCounter: "{count} / {min} Zeichen",
-
     pasteBlocked: "Einfügen ist deaktiviert – schreib es selbst",
-
     timeQuestion: "Wie viele Minuten wirst du diese Website nutzen?",
-
     minutesValue: "{minutes} Min.",
-
     minutesLabel: "Nutzungsdauer dieser Website in Minuten",
-
     declaration: "Ich erkläre, dass ich das wirklich brauche und mich mit dieser Aktion nicht selbst sabotiere.",
-
     continueButton: "Weiter",
-
     bannerReason: "Ich nutze das nur, weil: {reason}",
-
     bannerTimeLeft: "Verbleibende Zeit: {time}",
-
     stopButton: "STOPP",
-
     stopLabel: "Jetzt stoppen und diese Website blockieren",
-
   },
-
   zh_CN: {
-
     settingsButton: "设置",
-
     back: "返回",
-
     blockCurrentSite: "屏蔽 {site}",
-
     siteAlreadyBlocked: "{site} 已被屏蔽",
-
     domainInputLabel: "要屏蔽的域名",
-
     addButton: "添加",
-
     invalidDomain: "请输入有效的域名，例如 example.com。",
-
     blockedSitesTitle: "已屏蔽的网站",
-
     noBlockedSites: "还没有屏蔽任何网站。",
-
     removeButton: "移除",
-
     settingsTitle: "设置",
-
     languageLabel: "语言",
-
     languageAuto: "跟随浏览器",
-
     minCharsLabel: "解锁所需的最少字符数",
-
     overlayMessage: "你已决定屏蔽这个网站！你真的需要使用它吗？如果是，请在下方写下理由后继续。",
-
     reasonPlaceholder: "在这里写下你的理由（至少 {min} 个字符）……",
-
     reasonLabel: "继续的理由",
-
     reasonCounter: "{count} / {min} 个字符",
-
     pasteBlocked: "已禁止粘贴——请手动输入",
-
     timeQuestion: "你要使用这个网站多少分钟？",
-
     minutesValue: "{minutes} 分钟",
-
     minutesLabel: "使用这个网站的分钟数",
-
     declaration: "我声明我确实需要使用它，并没有用这个操作破坏自己的计划。",
-
     continueButton: "继续",
-
     bannerReason: "我使用它只是因为：{reason}",
-
     bannerTimeLeft: "剩余时间：{time}",
-
     stopButton: "停止",
-
     stopLabel: "立即停止并屏蔽此网站",
-
   },
-
   ja: {
-
     settingsButton: "設定",
-
     back: "戻る",
-
     blockCurrentSite: "{site} をブロック",
-
     siteAlreadyBlocked: "{site} はブロックされています",
-
     domainInputLabel: "ブロックするドメイン",
-
     addButton: "追加",
-
     invalidDomain: "example.com のような有効なドメインを入力してください。",
-
     blockedSitesTitle: "ブロック中のサイト",
-
     noBlockedSites: "ブロック中のサイトはまだありません。",
-
     removeButton: "削除",
-
     settingsTitle: "設定",
-
     languageLabel: "言語",
-
     languageAuto: "ブラウザの言語",
-
     minCharsLabel: "ロック解除に必要な最小文字数",
-
     overlayMessage: "このサイトをブロックすると決めましたね！本当に使う必要がありますか？必要なら、下に理由を書いてから進んでください。",
-
     reasonPlaceholder: "ここに理由を書いてください（{min} 文字以上）…",
-
     reasonLabel: "続ける理由",
-
     reasonCounter: "{count} / {min} 文字",
-
     pasteBlocked: "貼り付けはできません。自分で入力してください",
-
     timeQuestion: "このサイトを何分使いますか？",
-
     minutesValue: "{minutes} 分",
-
     minutesLabel: "このサイトを使う時間（分）",
-
     declaration: "本当に必要であり、この行動で自分の邪魔をしていないことを宣言します。",
-
     continueButton: "続ける",
-
     bannerReason: "これを使っている理由：{reason}",
-
     bannerTimeLeft: "残り時間：{time}",
-
     stopButton: "停止",
-
     stopLabel: "今すぐ停止してこのサイトをブロック",
-
   },
-
   ru: {
-
     settingsButton: "Настройки",
-
     back: "Назад",
-
     blockCurrentSite: "Заблокировать {site}",
-
     siteAlreadyBlocked: "{site} заблокирован",
-
     domainInputLabel: "Домен для блокировки",
-
     addButton: "Добавить",
-
     invalidDomain: "Введите корректный домен, например example.com.",
-
     blockedSitesTitle: "Заблокированные сайты",
-
     noBlockedSites: "Заблокированных сайтов пока нет.",
-
     removeButton: "Удалить",
-
     settingsTitle: "Настройки",
-
     languageLabel: "Язык",
-
     languageAuto: "Язык браузера",
-
     minCharsLabel: "Минимум символов для разблокировки",
-
     overlayMessage: "Вы решили заблокировать этот сайт! Он вам действительно нужен? Если да, напишите ниже причину и продолжайте.",
-
     reasonPlaceholder: "Напишите здесь причину (не менее {min} символов)...",
-
     reasonLabel: "Причина для продолжения",
-
     reasonCounter: "{count} / {min} символов",
-
     pasteBlocked: "Вставка отключена — напишите сами",
-
     timeQuestion: "Сколько минут вы будете пользоваться этим сайтом?",
-
     minutesValue: "{minutes} мин",
-
     minutesLabel: "Минуты на этом сайте",
-
     declaration: "Я заявляю, что мне это действительно нужно и я не саботирую себя этим действием.",
-
     continueButton: "Продолжить",
-
     bannerReason: "Я пользуюсь этим только потому, что: {reason}",
-
     bannerTimeLeft: "Оставшееся время: {time}",
-
     stopButton: "СТОП",
-
     stopLabel: "Остановить и заблокировать этот сайт сейчас",
-
   },
-
   hi: {
-
     settingsButton: "सेटिंग्स",
-
     back: "वापस",
-
     blockCurrentSite: "{site} ब्लॉक करें",
-
     siteAlreadyBlocked: "{site} ब्लॉक है",
-
     domainInputLabel: "ब्लॉक करने के लिए डोमेन",
-
     addButton: "जोड़ें",
-
     invalidDomain: "कोई मान्य डोमेन डालें, जैसे example.com.",
-
     blockedSitesTitle: "ब्लॉक की गई साइटें",
-
     noBlockedSites: "अभी तक कोई साइट ब्लॉक नहीं की गई है।",
-
     removeButton: "हटाएँ",
-
     settingsTitle: "सेटिंग्स",
-
     languageLabel: "भाषा",
-
     languageAuto: "ब्राउज़र की भाषा",
-
     minCharsLabel: "अनलॉक करने के लिए न्यूनतम अक्षर",
-
     overlayMessage: "आपने इस वेबसाइट को ब्लॉक करने का फ़ैसला किया था! क्या आपको सच में इसका उपयोग करना है? अगर हाँ, तो नीचे कारण लिखें और आगे बढ़ें।",
-
     reasonPlaceholder: "अपना कारण यहाँ लिखें (कम से कम {min} अक्षर)...",
-
     reasonLabel: "आगे बढ़ने का कारण",
-
     reasonCounter: "{count} / {min} अक्षर",
-
     pasteBlocked: "पेस्ट करना बंद है — ख़ुद लिखें",
-
     timeQuestion: "आप इस वेबसाइट का कितने मिनट उपयोग करेंगे?",
-
     minutesValue: "{minutes} मिनट",
-
     minutesLabel: "इस वेबसाइट का उपयोग करने का समय (मिनटों में)",
-
     declaration: "मैं घोषणा करता/करती हूँ कि मुझे सच में इसका उपयोग करने की ज़रूरत है और मैं इस कदम से अपनी ही प्रगति में बाधा नहीं डाल रहा/रही हूँ।",
-
     continueButton: "जारी रखें",
-
     bannerReason: "मैं इसका उपयोग सिर्फ़ इसलिए कर रहा/रही हूँ: {reason}",
-
     bannerTimeLeft: "बचा समय: {time}",
-
     stopButton: "रोकें",
-
     stopLabel: "अभी रोकें और इस साइट को ब्लॉक करें",
-
   },
-
   it: {
-
     settingsButton: "Impostazioni",
-
     back: "Indietro",
-
     blockCurrentSite: "Blocca {site}",
-
     siteAlreadyBlocked: "{site} è bloccato",
-
     domainInputLabel: "Dominio da bloccare",
-
     addButton: "Aggiungi",
-
     invalidDomain: "Inserisci un dominio valido, come example.com.",
-
     blockedSitesTitle: "Siti bloccati",
-
     noBlockedSites: "Nessun sito bloccato per ora.",
-
     removeButton: "Rimuovi",
-
     settingsTitle: "Impostazioni",
-
     languageLabel: "Lingua",
-
     languageAuto: "Lingua del browser",
-
     minCharsLabel: "Numero minimo di caratteri per sbloccare",
-
     overlayMessage: "Hai deciso di bloccare questo sito! Ti serve davvero? Se sì, scrivi qui sotto il motivo e prosegui.",
-
     reasonPlaceholder: "Scrivi qui il tuo motivo (almeno {min} caratteri)...",
-
     reasonLabel: "Motivo per continuare",
-
     reasonCounter: "{count} / {min} caratteri",
-
     pasteBlocked: "Incollare è disattivato: scrivilo tu",
-
     timeQuestion: "Per quanti minuti userai questo sito?",
-
     minutesValue: "{minutes} min",
-
     minutesLabel: "Minuti di utilizzo di questo sito",
-
     declaration: "Dichiaro che mi serve davvero e che non mi sto sabotando con questa azione.",
-
     continueButton: "Continua",
-
     bannerReason: "Lo sto usando solo perché: {reason}",
-
     bannerTimeLeft: "Tempo restante: {time}",
-
     stopButton: "STOP",
-
     stopLabel: "Ferma e blocca subito questo sito",
-
   },
-
 };
 
 function resolveLanguage(setting, uiLanguage = "") {
