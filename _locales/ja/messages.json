@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "Eclipse - ウェブサイトブロッカー"
+  },
+  "extDescription": {
+    "message": "選んだサイトを、理由を書いて意図を確認するまでブロックします。"
+  },
+  "actionTitle": {
+    "message": "ウェブサイトブロッカー"
+  }
+}

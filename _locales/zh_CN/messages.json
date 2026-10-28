@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "Eclipse - 网站屏蔽器"
+  },
+  "extDescription": {
+    "message": "屏蔽你选择的网站，直到你写下理由并确认你的意图。"
+  },
+  "actionTitle": {
+    "message": "网站屏蔽器"
+  }
+}

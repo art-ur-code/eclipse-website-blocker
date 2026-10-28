@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "Eclipse - Website-Blocker"
+  },
+  "extDescription": {
+    "message": "Blockiert ausgewählte Websites, bis du einen Grund aufschreibst und deine Absicht bestätigst."
+  },
+  "actionTitle": {
+    "message": "Website-Blocker"
+  }
+}
