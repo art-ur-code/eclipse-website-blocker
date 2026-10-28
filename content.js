@@ -9,6 +9,7 @@ let countdownIntervalId = null;
 let allowedUntil = 0;
 let currentReason = "";
 let currentBlockedDomain = "";
+let currentLang = "en";
 
 function normalizeHost(hostname) {
   return hostname.toLowerCase().replace(/^www\./, "");
@@ -104,9 +105,9 @@ function updateBannerCountdown() {
 
   const reasonText = banner.querySelector("#iwb-banner-reason");
   const timerText = banner.querySelector("#iwb-banner-timer");
-  reasonText.textContent = `I'm only using this because: ${currentReason}`;
+  reasonText.textContent = t(currentLang, "bannerReason", { reason: currentReason });
   if (!timerText.dataset.hovering) {
-    timerText.textContent = `Time left: ${formatRemainingTime(remaining)}`;
+    timerText.textContent = t(currentLang, "bannerTimeLeft", { time: formatRemainingTime(remaining) });
   }
 }
 
@@ -159,7 +160,7 @@ function showBanner(reason, expiryTime, domain) {
   const timerText = document.createElement("button");
   timerText.id = "iwb-banner-timer";
   timerText.type = "button";
-  timerText.setAttribute("aria-label", "Stop and block this site now");
+  timerText.setAttribute("aria-label", t(currentLang, "stopLabel"));
   timerText.style.cssText = [
     "all: initial",
     "box-sizing: border-box",
@@ -181,7 +182,7 @@ function showBanner(reason, expiryTime, domain) {
 
   timerText.addEventListener("mouseenter", () => {
     timerText.dataset.hovering = "true";
-    timerText.textContent = "STOP";
+    timerText.textContent = t(currentLang, "stopButton");
     timerText.style.background = "rgba(255, 107, 107, 0.16)";
     timerText.style.borderColor = "rgba(255, 107, 107, 0.4)";
     timerText.style.color = "#ff6b6b";
@@ -213,8 +214,9 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   removeBanner();
   currentBlockedDomain = blockedDomain;
 
-  const minReasonChars = await getMinReasonChars();
+  const [minReasonChars, lang] = await Promise.all([getMinReasonChars(), getLanguage()]);
   if (document.getElementById(IWB_OVERLAY_ID) || currentBlockedDomain !== blockedDomain) return;
+  currentLang = lang;
 
   const overlay = document.createElement("div");
   overlay.id = IWB_OVERLAY_ID;
@@ -228,12 +230,12 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   icon.alt = "";
 
   const message = document.createElement("p");
-  message.textContent = "You've decided to block this website! Do you really need to use it? If so, leave a message below with the reason and proceed";
+  message.textContent = t(lang, "overlayMessage");
 
   const reason = document.createElement("textarea");
   reason.id = "iwb-reason";
-  reason.placeholder = `Write your reason here (at least ${minReasonChars} characters)...`;
-  reason.setAttribute("aria-label", "Reason to continue");
+  reason.placeholder = t(lang, "reasonPlaceholder", { min: minReasonChars });
+  reason.setAttribute("aria-label", t(lang, "reasonLabel"));
 
   const reasonCounter = document.createElement("p");
   reasonCounter.id = "iwb-reason-counter";
@@ -242,7 +244,7 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   timeLabel.id = "iwb-time-row";
 
   const timeLabelText = document.createElement("span");
-  timeLabelText.textContent = "How many minutes will you use this website?";
+  timeLabelText.textContent = t(lang, "timeQuestion");
 
   const minutesValue = document.createElement("span");
   minutesValue.id = "iwb-minutes-value";
@@ -258,10 +260,10 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   minutesInput.max = "60";
   minutesInput.step = "5";
   minutesInput.value = "10";
-  minutesInput.setAttribute("aria-label", "Minutes to use this website");
+  minutesInput.setAttribute("aria-label", t(lang, "minutesLabel"));
 
   const updateMinutesValue = () => {
-    minutesValue.textContent = `${minutesInput.value} min`;
+    minutesValue.textContent = t(lang, "minutesValue", { minutes: minutesInput.value });
     const percent = ((minutesInput.value - minutesInput.min) / (minutesInput.max - minutesInput.min)) * 100;
     minutesInput.style.setProperty("--iwb-progress", `${percent}%`);
   };
@@ -277,12 +279,12 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   checkbox.type = "checkbox";
 
   const checkboxText = document.createElement("span");
-  checkboxText.textContent = "I declare that I really need to use this and I'm not sabotaging myself with this action.";
+  checkboxText.textContent = t(lang, "declaration");
 
   const button = document.createElement("button");
   button.id = "iwb-continue";
   button.type = "button";
-  button.textContent = "Continue";
+  button.textContent = t(lang, "continueButton");
   button.disabled = true;
 
   const getSelectedMinutes = () => Number(minutesInput.value);
@@ -290,7 +292,7 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
 
   const updateReasonCounter = () => {
     const length = getReasonLength();
-    reasonCounter.textContent = `${length} / ${minReasonChars} characters`;
+    reasonCounter.textContent = t(lang, "reasonCounter", { count: length, min: minReasonChars });
     reasonCounter.classList.remove("iwb-reason-counter-blocked");
     reasonCounter.classList.toggle("iwb-reason-counter-met", length >= minReasonChars);
   };
@@ -299,7 +301,7 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   const blockPaste = (event) => {
     event.preventDefault();
     clearTimeout(pasteHintTimeoutId);
-    reasonCounter.textContent = "Pasting is disabled — write it yourself";
+    reasonCounter.textContent = t(lang, "pasteBlocked");
     reasonCounter.classList.remove("iwb-reason-counter-met");
     reasonCounter.classList.add("iwb-reason-counter-blocked");
     pasteHintTimeoutId = setTimeout(updateReasonCounter, 2000);
@@ -352,6 +354,7 @@ async function enforceBlockList() {
   const allowance = allowances[matchedDomain];
 
   if (allowance && allowance.allowedUntil > Date.now()) {
+    currentLang = await getLanguage();
     removeOverlay();
     showBanner(allowance.reason, allowance.allowedUntil, matchedDomain);
     return;
