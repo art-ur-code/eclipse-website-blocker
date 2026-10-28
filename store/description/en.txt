@@ -1,0 +1,38 @@
+Eclipse — Website Blocker doesn't just block distracting websites. It makes you pause, think, and be honest with yourself before visiting them.
+
+🚫 Add any distracting website to your block list. When you try to open it, Eclipse stops you with a full-screen pause screen and asks you to:
+
+• Explain why you need to visit the site right now
+• Write a minimum number of characters to make sure your reason is intentional, not just an impulse
+• Choose how long you'll allow yourself to stay (5–60 minutes)
+• Confirm that you're making a conscious choice
+
+A live character counter shows your progress and turns green once you've written enough. Pasting is disabled, so your reason has to be typed by you, not copied in.
+
+Once you unlock the site, a slim reminder bar stays fixed at the bottom of the page, showing your reason and a live countdown. When time runs out, the site is automatically blocked again. You can also press STOP at any time to end your session early.
+
+✨ Why Eclipse works
+
+• Adds friction, not walls — access websites when you genuinely need them, while interrupting automatic, mindless visits
+• Makes you articulate your intention — writing down a real reason forces you to stop and think, and pasting is blocked so you can't skip it
+• Keeps you accountable — your reason stays visible while you're on the site
+• Time-boxes your usage — set a limit so "just five minutes" doesn't quietly become an hour
+• One-click blocking — open the popup on any website and block it instantly with the "Block this site" button
+• Configurable minimum length — choose how many characters your unlock reason must contain (50 by default)
+• Available in 11 languages — English, Spanish, Portuguese (Portugal and Brazil), French, German, Italian, Russian, Chinese (Simplified), Japanese and Hindi. Eclipse follows your browser's language, or you can choose one in Settings
+• Simple, tidy popup — a home screen for quick blocking, a dedicated Blocked sites list, and a Settings screen
+• Syncs your block list — blocked websites sync across your signed-in Chrome browsers
+• Privacy-focused — no accounts, no tracking, no ads. Your data stays in Chrome's local and sync storage
+
+🎯 Perfect for anyone who wants to spend less time on social media, news, YouTube, or other distracting websites while still allowing intentional access when it's genuinely needed.
+
+How it works:
+
+1. Open a distracting website, click the Eclipse icon and press "Block" — or add websites manually in Blocked sites
+2. Try visiting a blocked website
+3. Type your reason and meet the minimum character requirement
+4. Choose your time limit and unlock the site
+5. Stay accountable with the reminder bar and countdown
+6. Stop early whenever you want, or let Eclipse block the site automatically when time runs out
+
+Take a mindful pause before every distraction — with Eclipse.

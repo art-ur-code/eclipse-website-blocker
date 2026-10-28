@@ -1,0 +1,38 @@
+Eclipse - Blocco siti web non si limita a bloccare i siti che ti distraggono. Ti fa fermare, riflettere ed essere sincero con te stesso prima di visitarli.
+
+🚫 Aggiungi alla tua lista di blocco qualsiasi sito che ti distrae. Quando provi ad aprirlo, Eclipse ti ferma con una schermata di pausa a tutto schermo e ti chiede di:
+
+• Spiegare perché hai bisogno di visitare il sito proprio adesso
+• Scrivere un numero minimo di caratteri, per assicurarti che il tuo motivo sia intenzionale e non un semplice impulso
+• Scegliere per quanto tempo concederti di restare (5–60 minuti)
+• Confermare che stai facendo una scelta consapevole
+
+Un contatore di caratteri in tempo reale mostra i tuoi progressi e diventa verde quando hai scritto abbastanza. Incollare è disattivato, quindi il motivo devi scriverlo tu, non copiarlo.
+
+Una volta sbloccato il sito, una sottile barra promemoria resta fissa in fondo alla pagina, con il tuo motivo e un conto alla rovescia in tempo reale. Allo scadere del tempo, il sito viene bloccato di nuovo automaticamente. Puoi anche premere STOP in qualsiasi momento per terminare prima la sessione.
+
+✨ Perché Eclipse funziona
+
+• Aggiunge attrito, non muri — accedi ai siti quando ne hai davvero bisogno, mentre le visite automatiche e distratte vengono interrotte
+• Ti fa esprimere la tua intenzione — scrivere un motivo vero ti costringe a fermarti e pensare, e senza poter incollare non ci sono scorciatoie
+• Ti mantiene responsabile — il tuo motivo resta visibile finché sei sul sito
+• Limita il tempo di utilizzo — imposta un limite perché "solo cinque minuti" non diventino, senza accorgertene, un'ora
+• Blocco con un clic — apri il popup su qualsiasi sito e bloccalo subito con il pulsante "Blocca"
+• Lunghezza minima configurabile — scegli quanti caratteri deve contenere il motivo di sblocco (50 per impostazione predefinita)
+• Disponibile in 11 lingue — inglese, spagnolo, portoghese (Portogallo e Brasile), francese, tedesco, italiano, russo, cinese (semplificato), giapponese e hindi. Eclipse segue la lingua del browser, oppure puoi sceglierne un'altra nelle Impostazioni
+• Popup semplice e ordinato — una schermata iniziale per bloccare al volo, un elenco dedicato dei Siti bloccati e una schermata Impostazioni
+• Sincronizza la tua lista di blocco — i siti bloccati vengono sincronizzati tra i browser Chrome in cui hai effettuato l'accesso
+• Rispetta la privacy — nessun account, nessun tracciamento, nessuna pubblicità. I tuoi dati restano nello spazio di archiviazione locale e sincronizzato di Chrome
+
+🎯 Perfetto per chi vuole passare meno tempo su social network, notizie, YouTube o altri siti che distraggono, mantenendo però un accesso consapevole quando serve davvero.
+
+Come funziona:
+
+1. Apri un sito che ti distrae, fai clic sull'icona di Eclipse e premi "Blocca" — oppure aggiungi i siti manualmente in Siti bloccati
+2. Prova a visitare un sito bloccato
+3. Scrivi il tuo motivo e raggiungi il numero minimo di caratteri
+4. Scegli il limite di tempo e sblocca il sito
+5. Resta responsabile con la barra promemoria e il conto alla rovescia
+6. Fermati prima quando vuoi, oppure lascia che Eclipse blocchi automaticamente il sito allo scadere del tempo
+
+Prenditi una pausa consapevole prima di ogni distrazione — con Eclipse.

@@ -1,0 +1,38 @@
+Eclipse – Website-Blocker blockiert nicht einfach nur ablenkende Websites. Es bringt dich dazu, innezuhalten, nachzudenken und ehrlich zu dir selbst zu sein, bevor du sie besuchst.
+
+🚫 Füge jede ablenkende Website zu deiner Sperrliste hinzu. Wenn du versuchst, sie zu öffnen, hält Eclipse dich mit einem bildschirmfüllenden Pausenbildschirm auf und bittet dich:
+
+• zu erklären, warum du die Website gerade jetzt brauchst
+• eine Mindestanzahl an Zeichen zu schreiben, damit dein Grund bewusst gewählt ist und kein bloßer Impuls
+• festzulegen, wie lange du dir den Aufenthalt erlaubst (5–60 Minuten)
+• zu bestätigen, dass du eine bewusste Entscheidung triffst
+
+Ein Live-Zeichenzähler zeigt deinen Fortschritt und wird grün, sobald du genug geschrieben hast. Einfügen ist deaktiviert – dein Grund muss also selbst getippt und nicht hineinkopiert werden.
+
+Sobald du die Website freigibst, bleibt unten auf der Seite eine schmale Erinnerungsleiste fixiert, die deinen Grund und einen Live-Countdown anzeigt. Wenn die Zeit abgelaufen ist, wird die Website automatisch wieder blockiert. Du kannst auch jederzeit auf STOPP klicken, um deine Sitzung vorzeitig zu beenden.
+
+✨ Warum Eclipse funktioniert
+
+• Reibung statt Mauern – rufe Websites auf, wenn du sie wirklich brauchst, während automatische, gedankenlose Besuche unterbrochen werden
+• Lässt dich deine Absicht formulieren – einen echten Grund aufzuschreiben zwingt dich, innezuhalten und nachzudenken, und da Einfügen blockiert ist, gibt es keine Abkürzung
+• Hält dich verantwortlich – dein Grund bleibt sichtbar, solange du auf der Website bist
+• Begrenzt deine Nutzungszeit – setze ein Limit, damit aus „nur fünf Minuten“ nicht unbemerkt eine Stunde wird
+• Blockieren mit einem Klick – öffne das Popup auf einer beliebigen Website und blockiere sie sofort mit der Schaltfläche „Blockieren“
+• Einstellbare Mindestlänge – lege fest, wie viele Zeichen dein Entsperrgrund haben muss (standardmäßig 50)
+• In 11 Sprachen verfügbar – Englisch, Spanisch, Portugiesisch (Portugal und Brasilien), Französisch, Deutsch, Italienisch, Russisch, Chinesisch (vereinfacht), Japanisch und Hindi. Eclipse übernimmt die Sprache deines Browsers, oder du wählst in den Einstellungen eine andere
+• Einfaches, übersichtliches Popup – ein Startbildschirm zum schnellen Blockieren, eine eigene Liste der blockierten Websites und ein Einstellungsbildschirm
+• Synchronisiert deine Sperrliste – blockierte Websites werden zwischen deinen angemeldeten Chrome-Browsern synchronisiert
+• Datenschutzfreundlich – keine Konten, kein Tracking, keine Werbung. Deine Daten bleiben im lokalen und synchronisierten Speicher von Chrome
+
+🎯 Ideal für alle, die weniger Zeit mit sozialen Medien, Nachrichten, YouTube oder anderen ablenkenden Websites verbringen möchten, aber trotzdem bewusst darauf zugreifen wollen, wenn es wirklich nötig ist.
+
+So funktioniert's:
+
+1. Öffne eine ablenkende Website, klicke auf das Eclipse-Symbol und drücke „Blockieren“ – oder füge Websites manuell unter „Blockierte Websites“ hinzu
+2. Versuche, eine blockierte Website zu besuchen
+3. Tippe deinen Grund ein und erreiche die Mindestanzahl an Zeichen
+4. Wähle dein Zeitlimit und gib die Website frei
+5. Bleib verantwortlich – mit Erinnerungsleiste und Countdown
+6. Hör jederzeit früher auf oder lass Eclipse die Website automatisch wieder blockieren, wenn die Zeit abgelaufen ist
+
+Leg vor jeder Ablenkung eine bewusste Pause ein – mit Eclipse.
