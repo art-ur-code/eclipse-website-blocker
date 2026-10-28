@@ -89,6 +89,10 @@
   color: #8fd694 !important;
 }
 
+#iwb-block-card #iwb-reason-counter.iwb-reason-counter-blocked {
+  color: #ff6b6b !important;
+}
+
 #iwb-minutes:focus-visible {
   box-shadow: 0 0 0 5px rgba(255, 176, 82, 0.24) !important;
 }

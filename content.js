@@ -1,7 +1,7 @@
 const IWB_STORAGE_KEY = "blockedSites";
 const IWB_ALLOWANCES_KEY = "activeAllowances";
 const IWB_SETTINGS_KEY = "minReasonChars";
-const IWB_DEFAULT_MIN_REASON_CHARS = 100;
+const IWB_DEFAULT_MIN_REASON_CHARS = 50;
 const IWB_OVERLAY_ID = "iwb-block-overlay";
 const IWB_BANNER_ID = "iwb-reason-banner";
 
@@ -228,7 +228,7 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   icon.alt = "";
 
   const message = document.createElement("p");
-  message.textContent = "You've decided to block this website! Do you really need to use it? If so, leave a message bellow with the reason and proceed";
+  message.textContent = "You've decided to block this website! Do you really need to use it? If so, leave a message below with the reason and proceed";
 
   const reason = document.createElement("textarea");
   reason.id = "iwb-reason";
@@ -291,7 +291,18 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
   const updateReasonCounter = () => {
     const length = getReasonLength();
     reasonCounter.textContent = `${length} / ${minReasonChars} characters`;
+    reasonCounter.classList.remove("iwb-reason-counter-blocked");
     reasonCounter.classList.toggle("iwb-reason-counter-met", length >= minReasonChars);
+  };
+
+  let pasteHintTimeoutId = null;
+  const blockPaste = (event) => {
+    event.preventDefault();
+    clearTimeout(pasteHintTimeoutId);
+    reasonCounter.textContent = "Pasting is disabled — write it yourself";
+    reasonCounter.classList.remove("iwb-reason-counter-met");
+    reasonCounter.classList.add("iwb-reason-counter-blocked");
+    pasteHintTimeoutId = setTimeout(updateReasonCounter, 2000);
   };
 
   const updateButton = () => {
@@ -303,6 +314,8 @@ async function showBlockOverlay(blockedDomain = currentBlockedDomain) {
 
   updateButton();
   reason.addEventListener("input", updateButton);
+  reason.addEventListener("paste", blockPaste);
+  reason.addEventListener("drop", blockPaste);
   minutesInput.addEventListener("input", updateButton);
   checkbox.addEventListener("change", updateButton);
   button.addEventListener("click", async () => {

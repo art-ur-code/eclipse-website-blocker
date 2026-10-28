@@ -1,6 +1,6 @@
 const STORAGE_KEY = "blockedSites";
 const SETTINGS_KEY = "minReasonChars";
-const DEFAULT_MIN_REASON_CHARS = 100;
+const DEFAULT_MIN_REASON_CHARS = 50;
 
 const form = document.getElementById("add-form");
 const input = document.getElementById("domain-input");

@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.4.0]
+
+### Added
+
+- Pasting or dropping text into the unlock reason field is now blocked; the character counter briefly shows a red "Pasting is disabled" notice instead.
+
+### Changed
+
+- The default minimum reason length is now 50 characters (was 100). A value already set in the popup settings is kept.
+
+### Fixed
+
+- Typo in the block overlay message ("bellow" → "below").
+
 ## [1.3.0]
 
 ### Added
