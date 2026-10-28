@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.5.0]
+
+### Added
+
+- The extension is now available in 11 languages: English, Spanish, Portuguese (Portugal), Portuguese (Brazil), French, German, Chinese (Simplified), Japanese, Russian, Hindi and Italian. It follows the browser language by default (falling back to English), and a new **Language** setting lets you pick another one for the popup, block overlay and banner.
+- The extension name and description are translated too, including on the extensions page and the Chrome Web Store.
+- A **Block <site>** button on the popup home blocks the site in the current tab with one click (shown only on regular websites; disabled when the site is already blocked).
+
+### Changed
+
+- The popup is split into three screens: a home screen with quick blocking, a **Blocked sites** screen with the list, and a **Settings** screen (opened from the **Settings** button at the top) holding the language and minimum reason length.
+
 ## [1.4.0]
 
 ### Added

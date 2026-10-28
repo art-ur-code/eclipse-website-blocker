@@ -10,7 +10,8 @@ A browser extension that blocks chosen websites until you write down your reason
 - The reason has to be typed: pasting or dropping text into the field is blocked
 - Once allowed, a fixed bottom banner shows your reason and a countdown; hovering the countdown reveals a **STOP** button to re-block the site immediately, discarding the remaining time
 - Works across all URLs via a content script injected at page load
-- Simple popup UI for managing your blocked domains list
+- Popup with a quick-block home screen (including a one-click **Block <current site>** button), a separate **Blocked sites** list and a **Settings** screen
+- Available in 11 languages (English, Spanish, Portuguese PT/BR, French, German, Chinese Simplified, Japanese, Russian, Hindi, Italian); follows the browser language by default, with a Language setting to override it
 
 ## Installation (Chrome / Chromium-based browsers)
 
@@ -23,7 +24,10 @@ A browser extension that blocks chosen websites until you write down your reason
 ## Project structure
 
 - `manifest.json` — Manifest V3 extension configuration
-- `popup.html` / `popup.js` / `popup.css` — extension popup UI for managing blocked domains
+- `popup.html` / `popup.js` / `popup.css` — extension popup UI (home, blocked sites and settings screens)
+- `i18n.js` — all UI translations, language resolution and the `t()` helper, shared by the popup and the content script
+- `_locales/` — translated extension name and description used by the manifest and the Chrome Web Store
+- `scripts/check-i18n.js` — run `node scripts/check-i18n.js` to check every language has all strings and placeholders
 - `content.js` / `content.css` — content script that blocks matching sites and renders the reason prompt
 - `icon.png` — extension icon
 
